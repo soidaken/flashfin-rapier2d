@@ -1,0 +1,10 @@
+{
+  "name": "phy2d-test",
+  "uuid": "49871c9c-fccf-4e92-8887-3966b708b800",
+  "creator": {
+    "version": "3.8.6"
+  },
+  "dependencies": {
+    "@dimforge/rapier2d-compat": "^0.15.0"
+  }
+}
