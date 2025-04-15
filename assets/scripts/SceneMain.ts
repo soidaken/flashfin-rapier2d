@@ -19,6 +19,9 @@ export class SceneMain extends Component {
     @property(Node)
     container_balls:Node|null = null;
 
+    @property(cc.Node)
+    node_switchscene:cc.Node|null = null;
+
     private _timeAccumulator: any;
     private _countAcc: any;
 
@@ -39,6 +42,9 @@ export class SceneMain extends Component {
         // let r =  n.getComponent(cc.CircleCollider2D).radius
         // logger.log('radius:', r);
 
+        this.node_switchscene.on('click', (b:cc.Button) => {
+            cc.director.loadScene('scene_rapier2d');
+        });
     }
 
     update(dt: number) {

@@ -25,6 +25,9 @@ export class SceneRapier2d extends Component {
     @property(cc.Node)
     node_switch:cc.Node|null = null;
 
+    @property(cc.Node)
+    node_switchscene:cc.Node|null = null;
+
 
     private _timeAccumulator: any;
     private _countAcc: any;
@@ -52,18 +55,30 @@ export class SceneRapier2d extends Component {
             this.fillWorld();
             this._debugRenderer = this.getComponent(RapierDebugRenderer)!;
             this._debugRenderer.setWorld(this.world);
+
+            this.afterInit();
         });
         
     }
-    start() {
-        logger.log('dballs start');
 
-
+    afterInit() {
+        
         this.node_switch.children[0]!.getComponent(Label).string = this._debugRenderer.onoff ? 'debug:ON' : 'debug:OFF';
         this.node_switch.on('click', (b:cc.Button) => {
             this._debugRenderer.onoff = !this._debugRenderer.onoff; 
             this._debugRenderer.clear();
             b!.node.children[0]!.getComponent(Label).string = this._debugRenderer.onoff ? 'debug:ON' : 'debug:OFF';
+        });
+
+    }
+
+    start() {
+        logger.log('dballs start');
+
+
+
+        this.node_switchscene.on('click', (b:cc.Button) => {
+            cc.director.loadScene('scene_box2d');
         });
 
         // this.schedule((dt:number)=>{

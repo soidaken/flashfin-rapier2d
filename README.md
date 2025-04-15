@@ -7,6 +7,8 @@
 ### 使用注意
 1. 拉取仓库
 2. 进入根目录后 `npm install`
+3. 可以在 `https://soidaken.github.io/flashfin-rapier2d-runpage/` 查看运行效果
+
 
 ### 帮到你了吗?
 如果对你有帮助,请不吝赞助我一杯卡布奇诺☕️,谢谢!  
